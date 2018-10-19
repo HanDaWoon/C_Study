@@ -1,27 +1,37 @@
 #include <stdio.h>
-#include <math.h>
-
-int check_prime(int n) {
-    int sqr = (int) sqrt(n);
-    for (int i = 2; i <= sqr; i++)
-        if (n % i == 0)
-            return 0;
-    return 1;
-}
+#include <malloc.h>
+#include <stdlib.h>
 
 int main()
 {
-    int N, cnt = 0;
+
+    int* iptr;
+    int sum = 0, N;
 
     scanf("%d", &N);
 
-    for (int i = 2; i < N; ++i)
+    iptr = (int*)calloc((size_t) N, sizeof(int));
+
+    for (int i = 2; i < N; i++)
     {
-        if (check_prime(i))
-            cnt++;
+        if (iptr[i] == 1)
+            continue;
+
+        int j = i;
+
+        while ((j += i) <= N)
+        {
+            iptr[j] = 1;
+        }
     }
 
-    printf("%d", cnt);
+    for (int i = 2; i <= N; i++)
+    {
+        if (iptr[i] == 0)
+            sum++;
+    }
+
+    printf("%d",sum);
 
     return 0;
 }
