@@ -5,7 +5,7 @@ void printDivisors(long n)
 {
     long cnt = 0;
 
-    for (int i=1; i <= sqrt(n); i++)
+    for (int i = 1; i <= sqrt(n); i++)
     {
         if (n%i == 0)
         {
@@ -30,4 +30,4 @@ int main()
     scanf("%ld", &N);
     printDivisors(N);
     return 0;
-} 
+}
