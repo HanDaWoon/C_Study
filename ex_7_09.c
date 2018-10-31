@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-int check_prime(int n) {
+int check_prime(int n)
+{
     int i, sqr;
     sqr = (int)sqrt(n);
     for (i = 2; i <= sqr; i++)

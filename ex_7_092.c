@@ -4,7 +4,6 @@
 
 int main()
 {
-
     int* iptr;
     int sum = 0, N;
 
