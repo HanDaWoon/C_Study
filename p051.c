@@ -14,7 +14,7 @@
 
 int main()
 {
-    int n, pnd = 0, pnd_sum = 0, i = 0;
+    int n, pnd, pnd_sum = 0, i = 0;
     char obj;
     double money = 0;
 
