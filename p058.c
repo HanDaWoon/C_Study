@@ -27,11 +27,19 @@ int main()
     {
         pr_m(i);
 
-        for (int j = 0; j <= len -1; ++j)
+        for (int j = i; j < len -1; ++j)
         {
             printf("%c", input[j]);
         }
-        printf("\n");
+        for (int k = len - 1; k >= i; --k)
+        {
+            printf("%c", input[k]);
+        }
 
+        pr_m(i);
+
+        printf("\n");
     }
+
+    return 0;
 }
