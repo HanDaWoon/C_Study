@@ -12,7 +12,7 @@ int main()
 
     while ((input = (char) getchar()) != EOF)
     {
-        if (check_letter(input) == 1)
+        if (check_letter(input) == -2)
             printf("%c is not a letter.\n", input);
         else if (check_letter(input) != -1)
             printf("%c is a letter #%d.\n", input, check_letter(input));
@@ -24,11 +24,10 @@ int check_letter(char input)
 {
     if (isalpha(input))
         return (tolower(input) - 'a' + 1);
-//        return isupper(input) ? (input - 'A' + 1) : (input - 'a' + 1);
     else if (isspace(input))
         return -1;
     else if (iscntrl(input))
         return -1;
     else
-        return 1;
+        return -2;
 }
