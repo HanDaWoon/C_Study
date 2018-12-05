@@ -3,28 +3,29 @@
 //
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int biggest(const int * arr, int size);
-
-int main()
+int biggest(const int *, int);
+int main(void)
 {
-    int arr[10], size;
+    int n, cnt = 0;
+    int arr[100000] = { 0, };
 
-    for (int i = 0; i < 10; ++i)
+    while (scanf("%d", &n) == 1)
     {
-        scanf("%d", &arr[i]);
+        arr[cnt] = n;
+        cnt++;
     }
-    size = sizeof(arr) / sizeof(int);
-    printf("%d", biggest(arr, size));
 
-    return 0;
+    printf("%d", biggest(arr, cnt));
 }
 
-int biggest(const int * arr, int size)
+int biggest(const int *arr, int size)
 {
-    int bigst = 0;
+    int bigst = arr[0];
 
-    for (int i = 0; i < size; ++i)
+    for (int i = 1; i < size; ++i)
     {
         if (arr[i] > bigst)
             bigst = arr[i];
